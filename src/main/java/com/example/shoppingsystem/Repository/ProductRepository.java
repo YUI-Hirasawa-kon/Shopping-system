@@ -9,4 +9,8 @@ import org.springframework.data.domain.Pageable;
 public interface ProductRepository extends JpaRepository<Product, Long> {
     Page<Product> findByNameContaining(String keyword, Pageable pageable);
     Page<Product> findByStatus(Integer status, Pageable pageable);
+    Page<Product> findByNameContainingAndStatus(String keyword, Integer status, Pageable pageable);
+    Page<Product> findByStatusAndCategoryId(Integer status, Long categoryId, Pageable pageable);
+    Page<Product> findByNameContainingAndStatusAndCategoryId(
+            String keyword, Integer status, Long categoryId, Pageable pageable);
 }
