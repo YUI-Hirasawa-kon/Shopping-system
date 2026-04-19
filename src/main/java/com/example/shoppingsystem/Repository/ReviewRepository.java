@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface ReviewRepository extends JpaRepository<Review, Long> {
     List<Review> findByProductOrderByCreateTimeDesc(Product product);
-    boolean existsByOrderIdAndProductId(Long orderId, Long productId); // 检查用户是否已评论过该商品
+    boolean existsByOrderIdAndProductId(Long orderId, Long productId); // Check whether the user has already reviewed this product
 }

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "`order`") // order 是 MySQL 关键字，需要转义
+@Table(name = "`order`") // `order` is a MySQL keyword, so it needs escaping
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

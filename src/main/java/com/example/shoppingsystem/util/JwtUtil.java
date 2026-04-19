@@ -15,14 +15,14 @@ public class JwtUtil {
     @Value("${jwt.secret:mySecretKeyForJwtTokenGeneration2025!}")
     private String secret;
 
-    @Value("${jwt.expiration:86400000}") // 默认24小时
+    @Value("${jwt.expiration:86400000}") // Default: 24 hours
     private Long expiration;
 
     private SecretKey getSigningKey() {
         return Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
     }
 
-    // 生成Token
+    // Generate token
     public String generateToken(String username) {
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + expiration);
@@ -34,7 +34,7 @@ public class JwtUtil {
                 .compact();
     }
 
-    // 从Token中获取用户名
+    // Extract username from token
     public String getUsernameFromToken(String token) {
         Claims claims = Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())
@@ -44,7 +44,7 @@ public class JwtUtil {
         return claims.getSubject();
     }
 
-    // 验证Token是否有效（未过期且格式正确）
+    // Validate token (not expired and correctly formatted)
     public boolean validateToken(String token) {
         try {
             Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(token);

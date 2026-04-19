@@ -5,11 +5,12 @@ import com.example.shoppingsystem.Repository.UserRepository;
 import com.example.shoppingsystem.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@RestController
+@Controller
 @RequestMapping("/api/auth")
 public class AuthController {
 
@@ -22,15 +23,16 @@ public class AuthController {
     @Autowired
     private JwtUtil jwtUtil;
 
-    // 注册接口
+    // Register API
     @PostMapping("/register")
+    @ResponseBody
     public ApiResponse<?> register(@RequestBody RegisterRequest request) {
-        // 检查用户名是否已存在
+        // Check whether username already exists
         if (userRepository.existsByUsername(request.getUsername())) {
             return ApiResponse.error(400, "Username already exists.");
         }
 
-        // 创建新用户
+        // Create a new user
         User user = new User();
         user.setUsername(request.getUsername());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
@@ -42,8 +44,21 @@ public class AuthController {
         return ApiResponse.success("Registration successful", null);
     }
 
-    // 登录接口
+        // Login page (GET)
+        @GetMapping("/login")
+        public String loginPage() {
+            return "auth/login";
+        }
+
+        // Register page (GET)
+        @GetMapping("/register")
+        public String registerPage() {
+            return "auth/register";
+        }
+
+    // Login API
     @PostMapping("/login")
+    @ResponseBody
     public ApiResponse<?> login(@RequestBody LoginRequest request) {
         Optional<User> optionalUser = userRepository.findByUsername(request.getUsername());
         if (optionalUser.isEmpty()) {
@@ -55,7 +70,7 @@ public class AuthController {
             return ApiResponse.error(401, "Username or password incorrect.");
         }
 
-        // 生成JWT
+        // Generate JWT
         String token = jwtUtil.generateToken(user.getUsername());
         LoginResponse response = new LoginResponse(token, user.getUsername(), user.getRole());
 
