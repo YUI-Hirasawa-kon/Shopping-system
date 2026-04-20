@@ -1,7 +1,6 @@
-Here is the README file for your shopping system project. It includes startup instructions for IntelliJ IDEA, the technology stack, and a complete API reference.
 
 ```markdown
-# Shopping System – Online Mall Prototype
+# Online Shopping System
 
 A student project simulating a large department store shopping system.  
 Built with **Spring Boot**, **JSP**, **MySQL**, **JWT authentication**, and **Maven**.
@@ -216,7 +215,16 @@ src/
 
 ##  Contributors
 
-Student project – developed as part of a university assignment.
+Student project – developed as part of a Project Management assignment.
 
-For any issues, please contact the project maintainer.
-```
+Kwok Yu Chun 		s14116911
+CHAN Lee Po Billy 	s14212230
+Hon Chi Tung 		s12945822
+Chung Ho Long 		s14204150
+Soriano Max Janwayne Sarmiento s14084841
+saaid Danish 	s13696301
+Wong kai Yuen  s14155451
+Wong Chun Ho   s13486322
+Tsui Ching Kit s14104856
+Ching Man Chung s14187424
+
