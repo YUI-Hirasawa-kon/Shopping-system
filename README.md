@@ -216,7 +216,7 @@ src/
 Student group project – developed as part of a SoftwareProject Management group project.
 
 - Kwok Yu Chun (s14116911)
-- CHAN Lee Po Billy (s14212230)
+- CHAN Lee Po  (s14212230)
 - Hon Chi Tung (s12945822)
 - Chung Ho Long (s14204150)
 - Soriano Max Janwayne Sarmiento (s14084841)
