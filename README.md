@@ -220,5 +220,3 @@ Student project – developed as part of a university assignment.
 
 For any issues, please contact the project maintainer.
 ```
-
-This README provides everything needed to understand, set up, and test the shopping system. It includes a clear API reference, startup guide, and technology overview, all in English.
