@@ -1,5 +1,4 @@
 
-```markdown
 # Online Shopping System
 
 A student project simulating a large department store shopping system.  
