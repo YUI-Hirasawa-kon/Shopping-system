@@ -1,7 +1,7 @@
 
 # Online Shopping System
 
-A student project simulating a large department store shopping system.  
+A HKMU COMP3510SEF Software Project Management project simulating a large department store shopping system.  
 Built with **Spring Boot**, **JSP**, **MySQL**, **JWT authentication**, and **Maven**.
 
 ---
@@ -214,7 +214,7 @@ src/
 
 ##  Contributors
 
-Student project – developed as part of a Project Management assignment.
+Student group project – developed as part of a SoftwareProject Management group project.
 
 Kwok Yu Chun 		s14116911
 CHAN Lee Po Billy 	s14212230
